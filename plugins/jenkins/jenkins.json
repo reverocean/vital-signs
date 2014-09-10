@@ -1,0 +1,107 @@
+{
+    "actions" : [
+        {
+            "causes" : [
+                {
+                    "shortDescription" : "Started by an SCM change"
+                }
+            ]
+        },
+        {
+
+        },
+        {
+            "buildsByBranchName" : {
+                "refs/remotes/origin/master" : {
+                    "buildNumber" : 35,
+                    "buildResult" : null,
+                    "marked" : {
+                        "SHA1" : "f113b0f21ef2a93583a5972c9d70d16a19f7d3c8",
+                        "branch" : [
+                            {
+                                "SHA1" : "f113b0f21ef2a93583a5972c9d70d16a19f7d3c8",
+                                "name" : "refs/remotes/origin/master"
+                            }
+                        ]
+                    },
+                    "revision" : {
+                        "SHA1" : "f113b0f21ef2a93583a5972c9d70d16a19f7d3c8",
+                        "branch" : [
+                            {
+                                "SHA1" : "f113b0f21ef2a93583a5972c9d70d16a19f7d3c8",
+                                "name" : "refs/remotes/origin/master"
+                            }
+                        ]
+                    }
+                }
+            },
+            "lastBuiltRevision" : {
+                "SHA1" : "f113b0f21ef2a93583a5972c9d70d16a19f7d3c8",
+                "branch" : [
+                    {
+                        "SHA1" : "f113b0f21ef2a93583a5972c9d70d16a19f7d3c8",
+                        "name" : "refs/remotes/origin/master"
+                    }
+                ]
+            },
+            "remoteUrls" : [
+                "https://github.com/reverocean/employee.git"
+            ],
+            "scmName" : ""
+        },
+        {
+
+        },
+        {
+
+        }
+    ],
+    "artifacts" : [
+
+    ],
+    "building" : false,
+    "description" : null,
+    "duration" : 20972,
+    "estimatedDuration" : 21978,
+    "executor" : null,
+    "fullDisplayName" : "employee #35",
+    "id" : "2014-09-09_10-25-12",
+    "keepLog" : false,
+    "number" : 35,
+    "result" : "FAILURE",
+    "timestamp" : 1410229512881,
+    "url" : "http://localhost:8080/jenkins/job/Employee/35/",
+    "builtOn" : "",
+    "changeSet" : {
+        "items" : [
+            {
+                "affectedPaths" : [
+                    "src/test/java/employee/EmployeeControllerTest.java"
+                ],
+                "commitId" : "f113b0f21ef2a93583a5972c9d70d16a19f7d3c8",
+                "timestamp" : 1410229498000,
+                "author" : {
+                    "absoluteUrl" : "http://localhost:8080/jenkins/user/reverocean",
+                    "fullName" : "reverocean"
+                },
+                "comment" : "Update EmployeeControllerTest.java\n",
+                "date" : "2014-09-09T10:24:58+0800 +0800",
+                "id" : "f113b0f21ef2a93583a5972c9d70d16a19f7d3c8",
+                "msg" : "Update EmployeeControllerTest.java",
+                "paths" : [
+                    {
+                        "editType" : "edit",
+                        "file" : "src/test/java/employee/EmployeeControllerTest.java"
+                    }
+                ]
+            }
+        ],
+        "kind" : "git"
+    },
+    "culprits" : [
+        {
+            "absoluteUrl" : "http://localhost:8080/jenkins/user/reverocean",
+            "fullName" : "reverocean"
+        }
+    ]
+}

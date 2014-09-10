@@ -34,8 +34,9 @@ app.filter("duration",function () {
             if (countOfJobs === undefined || countOfJobs === 0) {
                 return;
             }
-            var projectsByRow = Math.ceil(Math.sqrt(countOfJobs));
+            var projectsByRow = 1;
             var rows = Math.ceil(countOfJobs / projectsByRow);
+
 
             $scope.newCss = {
                 width:(99 / projectsByRow) + '%',
@@ -43,11 +44,28 @@ app.filter("duration",function () {
                 margin:(1 / (rows * 2)) + '% ' + (1 / (projectsByRow * 2)) + '%'
             };
 
+            var handleJobFlag = false;
+
             var handleJob = function (jobData, index) {
-                $scope.jobsData[index] = (jobData);
+                if("FAILURE" == jobData.result){
+                    $scope.jobsData[0] = jobData;
+                }else{
+                    if(!handleJobFlag){
+                        $scope.jobsData[0] = jobData;
+                    }
+                }
+
+                handleJobFlag = true;
+//                $scope.jobsData[index] = (jobData);
             };
 
             var getJenkinsJobs = function () {
+//                $scope.jobsData[0] = {
+//                    result: 'SUCCESS'
+//                }
+
+
+                handleJobFlag = false;
                 var fun = function (index) {
                     return function (jobData) {
                         $timeout(function () {

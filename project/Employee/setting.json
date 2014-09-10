@@ -1,5 +1,5 @@
 {
-    "timer": 250000,
+    "timer": 2500,
     "jenkins": {
         "url": "http://localhost:8080",
         "jobs": [
