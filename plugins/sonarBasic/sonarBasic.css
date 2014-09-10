@@ -5,8 +5,28 @@
 }
 
 .badge {
-    color: #0b19ca;
-    background-color: #fff;
+    color: #fff;
+    background-color: #428bca;
     text-shadow: 0 0 0 rgba(0,0,0,0.25);
 }
 
+.failed {
+    background-color: #ff0000;
+}
+
+.success {
+    background-color: #ffffff;
+}
+
+.col-md-4 {
+    padding: 0;
+    width:32.333333%;
+}
+
+.panel-body{
+    padding: 0;
+}
+
+.panel {
+    margin: 4px;
+}

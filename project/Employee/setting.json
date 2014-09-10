@@ -23,7 +23,6 @@
         "group": [
             {
                 "name": "覆蓋率",
-                "compare": "greater",
                 "cols": [
                     {
                         "name": "代码行数",
@@ -31,64 +30,85 @@
                     },
                     {
                         "name": "覆蓋率",
-                        "key": "coverage"
+                        "key": "coverage",
+                        "compare": "greater",
+                        "benchmark": "70"
+
                     },
                     {
                         "name": "行覆蓋率",
-                        "key": "line_coverage"
+                        "key": "line_coverage",
+                        "compare": "greater",
+                        "benchmark": "60"
                     },
                     {
                         "name": "分支覆蓋率",
-                        "key": "branch_coverage"
+                        "key": "branch_coverage",
+                        "compare": "greater",
+                        "benchmark": "60"
                     }
                 ]
             },
             {
                 "name": "问题",
-                "compare": "less",
                 "cols": [
                     {
                         "name": "阻塞",
-                        "key": "blocker_violations"
+                        "key": "blocker_violations",
+                        "compare": "less",
+                        "benchmark": "60"
                     },
 
                     {
                         "name": "严重",
-                        "key": "critical_violations"
+                        "key": "critical_violations",
+                        "compare": "less",
+                        "benchmark": "60"
                     },
 
                     {
                         "name": "主要",
-                        "key": "major_violations"
+                        "key": "major_violations",
+                        "compare": "less",
+                        "benchmark": "60"
                     },
                     {
                         "name": "次要",
-                        "key": "minor_violations"
+                        "key": "minor_violations",
+                        "compare": "less",
+                        "benchmark": "60"
                     }
                 ]
             },
 
             {
                 "name": "重复",
-                "compare": "less",
                 "cols": [
                     {
                         "name": "重复率",
-                        "key": "duplicated_lines_density"
+                        "key": "duplicated_lines_density",
+                        "compare": "less",
+                        "benchmark": "60"
                     },
 
                     {
                         "name": "重复行",
-                        "key": "duplicated_lines"
+                        "key": "duplicated_lines",
+                        "compare": "less",
+                        "benchmark": "60"
                     },
 
                     {
                         "name": "重复块",
-                        "key": "duplicated_blocks"
+                        "key": "duplicated_blocks",
+                        "compare": "less",
+                        "benchmark": "60"
                     },
                     {
                         "name": "重复文件",
-                        "key": "duplicated_files"
+                        "key": "duplicated_files",
+                        "compare": "less",
+                        "benchmark": "60"
                     }
                 ]
             },
@@ -96,7 +116,6 @@
 
             {
                 "name": "构建",
-                "compare": "greater",
                 "cols": [
                     {
                         "name": "构建次数",
@@ -121,33 +140,41 @@
 
             {
                 "name": "复杂度",
-                "compare": "less",
                 "cols": [
                     {
                         "name": "整体复杂度",
-                        "key": "complexity"
+                        "key": "complexity",
+                        "compare": "less",
+                        "benchmark": "60"
                     },
                     {
                         "name": "函数复杂度",
-                        "key": "function_complexity"
+                        "key": "function_complexity",
+                        "compare": "less",
+                        "benchmark": "60"
                     },
                     {
                         "name": "类复杂度",
-                        "key": "class_complexity"
+                        "key": "class_complexity",
+                        "compare": "less",
+                        "benchmark": "60"
                     },
                     {
                         "name": "文件复杂度",
-                        "key": "file_complexity"
+                        "key": "file_complexity",
+                        "compare": "less",
+                        "benchmark": "60"
                     }
                 ]
             },
             {
                 "name": "测试",
-                "compare": "greater",
                 "cols": [
                     {
                         "name": "测试数",
-                        "key": "tests"
+                        "key": "tests",
+                        "compare": "greater",
+                        "benchmark": "60"
                     },
                     {
                         "name": "测试执行时间",
@@ -163,7 +190,9 @@
                     },
                     {
                         "name": "测试成功率",
-                        "key": "test_success_density"
+                        "key": "test_success_density",
+                        "compare": "greater",
+                        "benchmark": "60"
                     }
                 ]
             }

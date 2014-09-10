@@ -21,23 +21,23 @@ app.directive("sonarBasic", ["proxy", "timer", "$timeout", "underscore", functio
                             var result = {};
                             result.status = "success";
                             angular.forEach(data[0].msr, function (m) {
-                                result[m.key] = m.frmt_val;
-                                result[m.key+"value"] = m.val;
-//                                if(sonarMetricsCache[g.name]){
-//                                    var metrics = sonarMetricsCache[g.name];
-//                                    if(g.compare == "less"){
-//                                        if(metrics[m.key+"value"] < m.val){
-//                                            result.status = "failed"
-//                                        }
-//                                    }
-//
-//                                    if(g.compare == "greater"){
-//                                        if(metrics[m.key+"value"] > m.val){
-//                                            result.status = "failed"
-//                                        }
-//                                    }
-//
-//                                }
+                                result[m.key] = {};
+                                result[m.key].value = m.frmt_val;
+                                result[m.key].status = "success";
+                                var value = m.val;
+                                var col = underscore.where(group.cols, {key: m.key})[0];
+                                if( col.compare && "less" == col.compare){
+                                    if(value > col.benchmark){
+                                        result[m.key].status = "failed";
+                                    }
+                                }
+
+                                if( col.compare && "greater" == col.compare){
+                                    if(value < col.benchmark){
+                                        result[m.key].status = "failed";
+                                    }
+                                }
+
                             });
                             $timeout(function () {
                                 g.result = result;
