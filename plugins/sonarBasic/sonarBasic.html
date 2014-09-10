@@ -1,12 +1,13 @@
-<div class="well">
+<div class="well clearfix">
     <h2 style="margin-left:25px">Sonar</h2>
 
-    <div ng-repeat="item in sonarBasic.group">
-        <h3>{{item.name}}</h3>
-        <table class="table table-bordered table-striped">
-            <tr>
-                <td ng-repeat="col in item.cols">{{col.name}}:{{item.result[col.key]}}</td>
-            </tr>
-        </table>
+    <div ng-repeat="item in sonarBasic.group" class="sonar-block">
+        <label class="label label-primary">{{item.name}}</label>
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="col in item.cols">
+                <label class="label label-info">{{col.name}}</label>
+                <span class="badge pull-right">{{item.result[col.key]}}</span>
+            </li>
+        </ul>
     </div>
 </div>

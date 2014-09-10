@@ -23,6 +23,7 @@
         "group": [
             {
                 "name": "覆蓋率",
+                "compare": "greater",
                 "cols": [
                     {
                         "name": "代码行数",
@@ -44,6 +45,7 @@
             },
             {
                 "name": "问题",
+                "compare": "less",
                 "cols": [
                     {
                         "name": "阻塞",
@@ -68,6 +70,7 @@
 
             {
                 "name": "重复",
+                "compare": "less",
                 "cols": [
                     {
                         "name": "重复率",
@@ -93,6 +96,7 @@
 
             {
                 "name": "构建",
+                "compare": "greater",
                 "cols": [
                     {
                         "name": "构建次数",
@@ -117,6 +121,7 @@
 
             {
                 "name": "复杂度",
+                "compare": "less",
                 "cols": [
                     {
                         "name": "整体复杂度",
@@ -138,6 +143,7 @@
             },
             {
                 "name": "测试",
+                "compare": "greater",
                 "cols": [
                     {
                         "name": "测试数",

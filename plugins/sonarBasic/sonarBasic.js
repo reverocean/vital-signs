@@ -1,3 +1,4 @@
+//var sonarMetricsCache = {};
 app.directive("sonarBasic", ["proxy", "timer", "$timeout", "underscore", function (proxy, timer, $timeout, underscore) {
     return {
         priority: 0,
@@ -9,8 +10,8 @@ app.directive("sonarBasic", ["proxy", "timer", "$timeout", "underscore", functio
         controller: function ($scope) {
             $scope.sonarBasic = $scope.dashboardConfig.sonarBasic || {};
             var checker = function () {
-                angular.forEach($scope.sonarBasic.group, function (g) {
-                    var keySet = underscore.map(g.cols, function (c) {
+                angular.forEach($scope.sonarBasic.group, function (group) {
+                    var keySet = underscore.map(group.cols, function (c) {
                         return c.key;
                     });
                     var metrics = keySet.join(",");
@@ -18,15 +19,34 @@ app.directive("sonarBasic", ["proxy", "timer", "$timeout", "underscore", functio
                     var success = function (g) {
                         return function (data) {
                             var result = {};
+                            result.status = "success";
                             angular.forEach(data[0].msr, function (m) {
                                 result[m.key] = m.frmt_val;
+                                result[m.key+"value"] = m.val;
+//                                if(sonarMetricsCache[g.name]){
+//                                    var metrics = sonarMetricsCache[g.name];
+//                                    if(g.compare == "less"){
+//                                        if(metrics[m.key+"value"] < m.val){
+//                                            result.status = "failed"
+//                                        }
+//                                    }
+//
+//                                    if(g.compare == "greater"){
+//                                        if(metrics[m.key+"value"] > m.val){
+//                                            result.status = "failed"
+//                                        }
+//                                    }
+//
+//                                }
                             });
                             $timeout(function () {
                                 g.result = result;
+
+//                                sonarMetricsCache[g.name] = result;
                             });
                         };
                     };
-                    proxy.get(url, success(g));
+                    proxy.get(url, success(group));
                 });
             };
             timer.start(checker);
