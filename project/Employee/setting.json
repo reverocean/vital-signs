@@ -1,0 +1,166 @@
+{
+    "timer": 250000,
+    "jenkins": {
+        "url": "http://localhost:8080",
+        "jobs": [
+            "Employee",
+            "Employee2",
+            "Employee",
+            "Employee2",
+            "Employee",
+            "Employee2",
+            "Employee",
+            "Employee2",
+            "Employee",
+            "Employee2",
+            "Employee",
+            "Employee2"
+        ]
+    },
+    "sonarBasic": {
+        "resource": "Employee",
+        "url": "http://localhost:9000/",
+        "group": [
+            {
+                "name": "覆蓋率",
+                "cols": [
+                    {
+                        "name": "代码行数",
+                        "key": "ncloc"
+                    },
+                    {
+                        "name": "覆蓋率",
+                        "key": "coverage"
+                    },
+                    {
+                        "name": "行覆蓋率",
+                        "key": "line_coverage"
+                    },
+                    {
+                        "name": "分支覆蓋率",
+                        "key": "branch_coverage"
+                    }
+                ]
+            },
+            {
+                "name": "问题",
+                "cols": [
+                    {
+                        "name": "阻塞",
+                        "key": "blocker_violations"
+                    },
+
+                    {
+                        "name": "严重",
+                        "key": "critical_violations"
+                    },
+
+                    {
+                        "name": "主要",
+                        "key": "major_violations"
+                    },
+                    {
+                        "name": "次要",
+                        "key": "minor_violations"
+                    }
+                ]
+            },
+
+            {
+                "name": "重复",
+                "cols": [
+                    {
+                        "name": "重复率",
+                        "key": "duplicated_lines_density"
+                    },
+
+                    {
+                        "name": "重复行",
+                        "key": "duplicated_lines"
+                    },
+
+                    {
+                        "name": "重复块",
+                        "key": "duplicated_blocks"
+                    },
+                    {
+                        "name": "重复文件",
+                        "key": "duplicated_files"
+                    }
+                ]
+            },
+
+
+            {
+                "name": "构建",
+                "cols": [
+                    {
+                        "name": "构建次数",
+                        "key": "builds"
+                    },
+
+                    {
+                        "name": "失败次数",
+                        "key": "build_failures"
+                    },
+
+                    {
+                        "name": "最长修复时间",
+                        "key": "build_longest_time_to_fix_failure"
+                    },
+                    {
+                        "name": "平均修复时间",
+                        "key": "build_average_time_to_fix_failure"
+                    }
+                ]
+            },
+
+            {
+                "name": "复杂度",
+                "cols": [
+                    {
+                        "name": "整体复杂度",
+                        "key": "complexity"
+                    },
+                    {
+                        "name": "函数复杂度",
+                        "key": "function_complexity"
+                    },
+                    {
+                        "name": "类复杂度",
+                        "key": "class_complexity"
+                    },
+                    {
+                        "name": "文件复杂度",
+                        "key": "file_complexity"
+                    }
+                ]
+            },
+            {
+                "name": "测试",
+                "cols": [
+                    {
+                        "name": "测试数",
+                        "key": "tests"
+                    },
+                    {
+                        "name": "测试执行时间",
+                        "key": "test_execution_time"
+                    },
+                    {
+                        "name": "测试失败数",
+                        "key": "test_errors"
+                    },
+                    {
+                        "name": "测试异常数",
+                        "key": "test_failures"
+                    },
+                    {
+                        "name": "测试成功率",
+                        "key": "test_success_density"
+                    }
+                ]
+            }
+        ]
+    }
+}

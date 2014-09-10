@@ -11,7 +11,13 @@
 
                         <div class="inlineInfo">
                             {{jobData.result}}
-                            <span> ~ {{jobData.duration | duration}}</span>
+                            <div> ~ {{jobData.duration | duration}}</div>
+                            <ul>
+                                <li ng-repeat="item in jobData.changeSet.items">
+                                    <span>提交人：{{item.author.fullName}}</span>
+                                    <span>时间：{{item.date}}</span>
+                                </li>
+                            </ul>
                         </div>
                     </td>
                 </tr>
