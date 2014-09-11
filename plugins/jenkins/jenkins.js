@@ -1,4 +1,4 @@
-app.filter("duration",function () {
+app.filter("duration", function () {
     var calculateDuration = function (inuput) {
         var durationSec = parseInt(inuput, 10);
         var minutes = parseInt(durationSec / (60 * 1000), 10);
@@ -13,15 +13,15 @@ app.filter("duration",function () {
             return !!item;
         });
     };
-}]).directive("jenkins", ["proxy", "timer", "$timeout", function (proxy, timer, $timeout) {
+}]).directive("jenkins", ["proxy", "timer", "$timeout", 'underscore', function (proxy, timer, $timeout, underscore) {
     return {
-        priority:0,
-        templateUrl:'/resource/html?path=plugins/jenkins/jenkins.html',
-        replace:true,
-        transclude:false,
-        restrict:'EA',
-        scope:true,
-        controller:function ($scope) {
+        priority: 0,
+        templateUrl: '/resource/html?path=plugins/jenkins/jenkins.html',
+        replace: true,
+        transclude: false,
+        restrict: 'EA',
+        scope: true,
+        controller: function ($scope) {
             var jenkinsUrl = $scope.dashboardConfig.jenkins.url;
             var jenkinsJobs = $scope.dashboardConfig.jenkins.jobs;
 
@@ -39,24 +39,24 @@ app.filter("duration",function () {
 
 
             $scope.newCss = {
-                width:(99 / projectsByRow) + '%',
-                height:97 / rows + '%',
-                margin:(1 / (rows * 2)) + '% ' + (1 / (projectsByRow * 2)) + '%'
+                width: (99 / projectsByRow) + '%',
+                height: 97 / rows + '%',
+                margin: (1 / (rows * 2)) + '% ' + (1 / (projectsByRow * 2)) + '%'
             };
 
             var handleJobFlag = false;
 
             var handleJob = function (jobData, index) {
-                if("FAILURE" == jobData.result){
-                    $scope.jobsData[0] = jobData;
-                }else{
-                    if(!handleJobFlag){
-                        $scope.jobsData[0] = jobData;
-                    }
-                }
-
-                handleJobFlag = true;
-//                $scope.jobsData[index] = (jobData);
+//                if("FAILURE" == jobData.result){
+//                    $scope.jobsData[0] = jobData;
+//                }else{
+//                    if(!handleJobFlag){
+//                        $scope.jobsData[0] = jobData;
+//                    }
+//                }
+//
+//                handleJobFlag = true;
+                $scope.jobsData[index] = (jobData);
             };
 
             var getJenkinsJobs = function () {
@@ -64,7 +64,7 @@ app.filter("duration",function () {
 //                    result: 'SUCCESS'
 //                }
 
-
+                $scope.jobsData = [];
                 handleJobFlag = false;
                 var fun = function (index) {
                     return function (jobData) {
@@ -80,6 +80,16 @@ app.filter("duration",function () {
                 }
             };
             timer.start(getJenkinsJobs);
+            $scope.$watch('jobsData', function () {
+                if ($scope.jobsData.length == jenkinsJobs.length) {
+                    var failures = underscore.where($scope.jobsData, {result: "FAILURE"});
+                    if (failures && failures.length > 0) {
+                        $scope.jobData = failures[0];
+                    } else {
+                        $scope.jobData = $scope.jobsData[0];
+                    }
+                }
+            }, true)
         }
     };
 }]);

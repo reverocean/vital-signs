@@ -1,0 +1,190 @@
+{
+  "timer": 2500,
+  "jenkins": {
+    "url": "http://10.75.8.182:8080",
+    "jobs": [
+      "Build_NFManager_Develop",
+      "Build_NFManager_Develop_20.components",
+      "Build_NFManager_Develop_30.tools",
+      "Build_NFManager_Develop_40.assembly",
+      "Build_NFManager_Develop_40.assembly",
+      "Build_NFManager_Develop_90.opendaylight",
+      "Build_NFManager_Release",
+      "Build_ZODL_NFManager",
+      "Deploy_NFManager_Develop",
+      "Deploy_NFManager_Develop_Test",
+      "Deploy_NFManager_Develop_Tools",
+      "Sonar_NFManager_Develop"
+    ]
+  },
+  "sonarBasic": {
+    "resource": "Employee",
+    "url": "http://10.74.216.112:9000/",
+    "group": [
+      {
+        "name": "覆蓋率",
+        "cols": [
+          {
+            "name": "代码行数",
+            "key": "ncloc"
+          },
+          {
+            "name": "覆蓋率",
+            "key": "coverage",
+            "compare": "greater",
+            "benchmark": "70"
+          },
+          {
+            "name": "行覆蓋率",
+            "key": "line_coverage",
+            "compare": "greater",
+            "benchmark": "60"
+          },
+          {
+            "name": "分支覆蓋率",
+            "key": "branch_coverage",
+            "compare": "greater",
+            "benchmark": "60"
+          }
+        ]
+      },
+      {
+        "name": "问题",
+        "cols": [
+          {
+            "name": "阻塞",
+            "key": "blocker_violations",
+            "compare": "less",
+            "benchmark": "60"
+          },
+          {
+            "name": "严重",
+            "key": "critical_violations",
+            "compare": "less",
+            "benchmark": "60"
+          },
+          {
+            "name": "主要",
+            "key": "major_violations",
+            "compare": "less",
+            "benchmark": "60"
+          },
+          {
+            "name": "次要",
+            "key": "minor_violations",
+            "compare": "less",
+            "benchmark": "60"
+          }
+        ]
+      },
+      {
+        "name": "重复",
+        "cols": [
+          {
+            "name": "重复率",
+            "key": "duplicated_lines_density",
+            "compare": "less",
+            "benchmark": "60"
+          },
+          {
+            "name": "重复行",
+            "key": "duplicated_lines",
+            "compare": "less",
+            "benchmark": "60"
+          },
+          {
+            "name": "重复块",
+            "key": "duplicated_blocks",
+            "compare": "less",
+            "benchmark": "60"
+          },
+          {
+            "name": "重复文件",
+            "key": "duplicated_files",
+            "compare": "less",
+            "benchmark": "60"
+          }
+        ]
+      },
+      {
+        "name": "构建",
+        "cols": [
+          {
+            "name": "构建次数",
+            "key": "builds"
+          },
+          {
+            "name": "失败次数",
+            "key": "build_failures"
+          },
+          {
+            "name": "最长修复时间",
+            "key": "build_longest_time_to_fix_failure"
+          },
+          {
+            "name": "平均修复时间",
+            "key": "build_average_time_to_fix_failure"
+          }
+        ]
+      },
+      {
+        "name": "复杂度",
+        "cols": [
+          {
+            "name": "整体复杂度",
+            "key": "complexity",
+            "compare": "less",
+            "benchmark": "60"
+          },
+          {
+            "name": "函数复杂度",
+            "key": "function_complexity",
+            "compare": "less",
+            "benchmark": "60"
+          },
+          {
+            "name": "类复杂度",
+            "key": "class_complexity",
+            "compare": "less",
+            "benchmark": "60"
+          },
+          {
+            "name": "文件复杂度",
+            "key": "file_complexity",
+            "compare": "less",
+            "benchmark": "60"
+          }
+        ]
+      },
+      {
+        "name": "测试",
+        "cols": [
+          {
+            "name": "测试数",
+            "key": "tests",
+            "compare": "greater",
+            "benchmark": "60"
+          },
+          {
+            "name": "测试执行时间",
+            "key": "test_execution_time"
+          },
+          {
+            "name": "测试失败数",
+            "key": "test_errors"
+          },
+          {
+            "name": "测试异常数",
+            "key": "test_failures"
+          },
+          {
+            "name": "测试成功率",
+            "key": "test_success_density",
+            "compare": "greater",
+            "benchmark": "60"
+          }
+        ]
+      }
+    ]
+  }
+}
