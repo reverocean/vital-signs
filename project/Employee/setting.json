@@ -1,7 +1,7 @@
 {
     "timer": 2500,
     "jenkins": {
-        "url": "http://localhost:8080",
+        "url": "http://localhost:8080/jenkins",
         "jobs": [
             "Employee",
             "Employee2",

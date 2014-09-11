@@ -75,7 +75,7 @@ app.filter("duration",function () {
                 };
 
                 for (var jobIndex = 0; jobIndex < jenkinsJobs.length; jobIndex++) {
-                    proxy.get(jenkinsUrl + '/jenkins/job/' + jenkinsJobs[jobIndex] +
+                    proxy.get(jenkinsUrl + '/job/' + jenkinsJobs[jobIndex] +
                         '/lastBuild/api/json?pretty=true', fun(jobIndex));
                 }
             };
