@@ -18,8 +18,8 @@
     ]
   },
   "sonarBasic": {
-    "resource": "Employee",
-    "url": "http://10.74.216.112:9000/",
+    "resource": "com.zte.ums.zenic.sonar:sonar",
+    "url": "http://10.74.216.3:9000/",
     "group": [
       {
         "name": "覆蓋率",
@@ -32,19 +32,19 @@
             "name": "覆蓋率",
             "key": "coverage",
             "compare": "greater",
-            "benchmark": "70"
+            "benchmark": "3.8"
           },
           {
             "name": "行覆蓋率",
             "key": "line_coverage",
             "compare": "greater",
-            "benchmark": "60"
+            "benchmark": "4.2"
           },
           {
             "name": "分支覆蓋率",
             "key": "branch_coverage",
             "compare": "greater",
-            "benchmark": "60"
+            "benchmark": "2.8"
           }
         ]
       },
@@ -55,25 +55,25 @@
             "name": "阻塞",
             "key": "blocker_violations",
             "compare": "less",
-            "benchmark": "60"
+            "benchmark": "226"
           },
           {
             "name": "严重",
             "key": "critical_violations",
             "compare": "less",
-            "benchmark": "60"
+            "benchmark": "99"
           },
           {
             "name": "主要",
             "key": "major_violations",
             "compare": "less",
-            "benchmark": "60"
+            "benchmark": "13102"
           },
           {
             "name": "次要",
             "key": "minor_violations",
             "compare": "less",
-            "benchmark": "60"
+            "benchmark": "4955"
           }
         ]
       },
@@ -84,25 +84,25 @@
             "name": "重复率",
             "key": "duplicated_lines_density",
             "compare": "less",
-            "benchmark": "60"
+            "benchmark": "12.6"
           },
           {
             "name": "重复行",
             "key": "duplicated_lines",
             "compare": "less",
-            "benchmark": "60"
+            "benchmark": "21196"
           },
           {
             "name": "重复块",
             "key": "duplicated_blocks",
             "compare": "less",
-            "benchmark": "60"
+            "benchmark": "1093"
           },
           {
             "name": "重复文件",
             "key": "duplicated_files",
             "compare": "less",
-            "benchmark": "60"
+            "benchmark": "266"
           }
         ]
       },
@@ -132,27 +132,19 @@
         "cols": [
           {
             "name": "整体复杂度",
-            "key": "complexity",
-            "compare": "less",
-            "benchmark": "60"
+            "key": "complexity"
           },
           {
             "name": "函数复杂度",
-            "key": "function_complexity",
-            "compare": "less",
-            "benchmark": "60"
+            "key": "function_complexity"
           },
           {
             "name": "类复杂度",
-            "key": "class_complexity",
-            "compare": "less",
-            "benchmark": "60"
+            "key": "class_complexity"
           },
           {
             "name": "文件复杂度",
-            "key": "file_complexity",
-            "compare": "less",
-            "benchmark": "60"
+            "key": "file_complexity"
           }
         ]
       },
@@ -163,7 +155,7 @@
             "name": "测试数",
             "key": "tests",
             "compare": "greater",
-            "benchmark": "60"
+            "benchmark": "230"
           },
           {
             "name": "测试执行时间",
@@ -181,7 +173,7 @@
             "name": "测试成功率",
             "key": "test_success_density",
             "compare": "greater",
-            "benchmark": "60"
+            "benchmark": "100.0"
           }
         ]
       }

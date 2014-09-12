@@ -88,6 +88,8 @@ app.filter("duration", function () {
                     } else {
                         $scope.jobData = $scope.jobsData[0];
                     }
+
+                    $scope.jobData.changeSet.items = underscore.first($scope.jobData.changeSet.items, 4);
                 }
             }, true)
         }
