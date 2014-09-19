@@ -2,23 +2,24 @@
     <h2 style="margin-left:25px">Jenkins</h2>
     <ul id="projectsTable" style="font-size: 0.52em;">
         <li style="width: {{newCss.width}}; height: {{newCss.height}}; margin: 4px; opacity: 1; display: inline-block; overflow: hidden;"
-            class="project" >
+            class="project">
             <table class="innerTable">
                 <tbody>
                 <tr>
                     <td class="projectName {{jobData.result | lowercase}}-state">
                         <!--<span>{{jobData.fullDisplayName}}</span>-->
-
-                        <div class="inlineInfo">
-                            {{jobData.result}}
-                            <div> ~ {{jobData.duration | duration}}</div>
-                            <ul>
-                                <li ng-repeat="item in jobData.changeSet.items">
-                                    <span>提交人：{{item.author.fullName}}</span>
-                                    <span>时间：{{item.date}}</span>
-                                </li>
-                            </ul>
-                        </div>
+                        <a ng-href="{{$scope.dashboardConfig.jenkins.viewUrl}}">
+                            <div class="inlineInfo">
+                                {{jobData.result}}
+                                <div> ~ {{jobData.duration | duration}}</div>
+                                <ul>
+                                    <li ng-repeat="item in jobData.changeSet.items">
+                                        <span>提交人：{{item.author.fullName}}</span>
+                                        <span>时间：{{item.date}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </a>
                     </td>
                 </tr>
                 </tbody>

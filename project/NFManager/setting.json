@@ -2,6 +2,7 @@
   "timer": 2500,
   "jenkins": {
     "url": "http://10.75.8.182:8080",
+    "viewUrl": "http://10.75.8.182:8080",
     "jobs": [
       "Build_NFManager_Develop",
       "Build_NFManager_Develop_20.components",

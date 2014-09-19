@@ -41,6 +41,13 @@
     background-color: green !important;
     /*	background-color: #63b542;*/
 }
+
+
+.building-state {
+    background-color: yellowgreen !important;
+    /*	background-color: #63b542;*/
+}
+
 .failure-state {
     background-color: red !important;
     /*	background-color: #f3373c;*/

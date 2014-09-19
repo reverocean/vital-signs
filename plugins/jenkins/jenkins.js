@@ -47,23 +47,10 @@ app.filter("duration", function () {
             var handleJobFlag = false;
 
             var handleJob = function (jobData, index) {
-//                if("FAILURE" == jobData.result){
-//                    $scope.jobsData[0] = jobData;
-//                }else{
-//                    if(!handleJobFlag){
-//                        $scope.jobsData[0] = jobData;
-//                    }
-//                }
-//
-//                handleJobFlag = true;
                 $scope.jobsData[index] = (jobData);
             };
 
             var getJenkinsJobs = function () {
-//                $scope.jobsData[0] = {
-//                    result: 'SUCCESS'
-//                }
-
                 $scope.jobsData = [];
                 handleJobFlag = false;
                 var fun = function (index) {
@@ -87,6 +74,9 @@ app.filter("duration", function () {
                         $scope.jobData = failures[0];
                     } else {
                         $scope.jobData = $scope.jobsData[0];
+                        if(!$scope.jobData.result){
+                            $scope.jobData.result = "BUILDING";
+                        }
                     }
 
                     $scope.jobData.changeSet.items = underscore.first($scope.jobData.changeSet.items, 4);
